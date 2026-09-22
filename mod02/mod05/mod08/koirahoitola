@@ -1,0 +1,126 @@
+class Koira:
+    def __init__(self, nimi, syntymävuosi, väri, koko):
+        self.nimi = nimi
+        self.syntymävuosi = syntymävuosi
+        self.väri = väri
+        self.koko = koko
+
+    def esittele(self):
+        return f"Hei, minä olen {self.nimi}, {self.väri} ja {self.koko} koira vuodelta {self.syntymävuosi}."
+
+# Luodaan instanssit
+k1 = Koira('Muro', 2018, 'harmaa', 'iso')
+
+# Kutsutaan olion metodia
+print(k1.esittele())
+class Koira:
+    tehty = 0  # luokkamuuttuja
+
+    def __init__(self, nimi, syntymävuosi, väri, koko, haukahdus='Vuh-vuh'):
+        self.nimi = nimi
+        self.syntymävuosi = syntymävuosi
+        self.väri = väri
+        self.koko = koko
+        self.haukahdus = haukahdus
+        Koira.tehty = Koira.tehty + 1
+
+    def hauku(self, kerrat):
+        print(f'Koira {self.nimi} haukkuu nyt {kerrat} kertaa:')
+        for i in range(kerrat):
+            print(f'{self.haukahdus}')
+
+
+# Pääohjelma
+k1 = Koira('Muro', 2018, 'harmaa', 'iso', 'WOOOOF WOOOOOOFFF')
+k2 = Koira('Rekku', 2022, 'ruskea', 'pieni', 'YIP YIP')
+k3 = Koira('Fina', 2020, 'beige', 'keskikokoinen')
+
+k3.hauku(5)
+print(f"\nKoiria on nyt yhteensä {Koira.tehty}.")
+class Koira:
+    def __init__(self, nimi, syntymävuosi, väri, koko, haukahdus='Vuh-vuh'):
+        self.nimi = nimi
+        self.syntymävuosi = syntymävuosi
+        self.väri = väri
+        self.koko = koko
+        self.haukahdus = haukahdus
+        self.osoite = "Esimerkkikatu 12, 00100 Helsinki"
+
+    def hauku(self, kerrat):
+        print(f'Koira {self.nimi} haukkuu ilosta {kerrat} kertaa:')
+        for _ in range(kerrat):
+            print(f'  -> {self.haukahdus}')
+
+
+class Hoitola:
+    def __init__(self, nimi):
+        self.nimi = nimi
+        self.koirat = []
+        
+
+    def koira_sisään(self, koira):
+        self.koirat.append(koira)
+# lista on myös olio ja siihen viitataan muuttuujilla
+def muokka_listaa(muokattava_ lista):
+    muokattava_lista.append(6)
+    lista = (lista1.2.8)
+    print
+    def koira_ulos(self, koira):
+        if koira in self.koirat:
+            self.koirat.remove(koira)
+#tähän teimme sivuhuomion lisäämällä hoitolan osoitteen
+
+    def tervehdi_koiria(self):
+        print(f"\n--- Hoitola: {self.nimi} ---")
+        for koira in self.koirat:
+            print(f"[Lahjojen jako] Annetaan luu koiralle: {koira.nimi}")
+            koira.hauku(2)
+#luodaan lisää koiria
+hoitola.koira_sisäänkoira("Bella")
+
+class Yritys:
+    def __init__(self, nimi):
+        self.nimi = nimi
+        self.hoitolat = []
+
+    def lisaa_hoitola(self, hoitola):
+        self.hoitolat.append(hoitola)
+
+    def tulosta_hoitolat(self):
+        print(f"Yritys {self.nimi} hallinnoi seuraavia hoitoloita:")
+        for hoitola in self.hoitolat:
+            print(f"  - {hoitola.nimi} (Asukkaita: {len(hoitola.koirat)} koiraa)")
+
+    def anna_joululahja(self):
+        print(f"\n=== {self.nimi}: Aloitetaan joululahjojen jakelu kaikissa toimipisteissä ===")
+        for hoitola in self.hoitolat:
+            hoitola.tervehdi_koiria()
+
+
+# --- Pääohjelma (Execution) ---
+
+# 1. Luodaan koira-oliot
+k1 = Koira('Muro', 2018, 'harmaa', 'iso', 'WOOOOF WOOOOOOFFF')
+k2 = Koira('Rekku', 2022, 'ruskea', 'pieni', 'YIP YIP')
+k3 = Koira('Fina', 2020, 'beige', 'keskikokoinen', 'Vuh-vuh')
+
+# 2. Luodaan hoitolat
+h1 = Hoitola('Pohjoinen Koirakoti')
+h2 = Hoitola('Eteläinen Lemmikkihotelli')
+
+# Sijoitetaan koirat hoitoloihin
+h1.koira_sisään(k1)
+h1.koira_sisään(k2)
+h2.koira_sisään(k3)
+
+# 3. Luodaan yritys ja liitetään hoitolat siihen
+y1 = Yritys('PetCare Konserni Oy')
+y1.lisaa_hoitola(h1)
+y1.lisaa_hoitola(h2)
+
+# 4. Suoritetaan yritystason prosessit
+y1.tulosta_hoitolat()
+y1.anna_joululahja()
+
+
+

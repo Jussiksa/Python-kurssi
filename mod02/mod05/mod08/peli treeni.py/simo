@@ -1,0 +1,91 @@
+import random
+
+
+class SimoKusetusPeli:
+    def __init__(self):
+        self.koiran_sijainti = 0  # Lähtökohta polulla
+        self.puun_sijainti = 4  # Puun sijainti polulla
+        self.hihnan_kunto = 5  # Kestää 5 puremista / askelta
+
+    def pelaa(self):
+        print("=== SIMON KUSETUSPELI ===")
+        print(
+            "Ohjaa Simo oikeaan kohtaan puun viereen. Varo yllättäviä puremisia ja"
+            " hihnan katkeamista!"
+        )
+
+        while True:
+            print(f"\n--- Tilannekatsaus ---")
+            print(f"Koiran sijainti polulla: {self.koiran_sijainti}")
+            print(f"Puu sijaitsee kohdassa: {self.puun_sijainti}")
+            print(f"Hihnan kestävyys nyt: {self.hihnan_kunto}/5")
+
+            # Aito tuuri / satunnainen puremistapahtuma kesken lenkin
+            if random.random() < 0.25:  # 25% mahdollisuus kierroksella
+                print(
+                    "\nSimo pysähtyy yllättäen ja aloittaa kiivaan puremisen"
+                    " hihnaan!"
+                )
+                self.hihnan_kunto -= 1
+
+                print(f"Hihnan kestävyys vuoron päätteeksi: {self.hihnan_kunto}/5")
+
+                if self.hihnan_kunto <= 0:
+                    print(
+                        "\nNAPS! Simo puri hihnan poikki kesken kaiken ja"
+                        " karkasi!"
+                    )
+                    break
+
+                print("Hihna otti osumaa! Et voi liikkua tällä vuorolla.")
+                continue  # Ohitetaan liikkuminen tällä vuorolla
+
+            suunta = (
+                input("Mihin liikutetaan? (e = eteenpäin, t = taaksepäin): ")
+                .strip()
+                .lower()
+            )
+
+            if suunta == "e":
+                self.koiran_sijainti += 1
+                self.hihnan_kunto -= 1
+            elif suunta == "t":
+                self.koiran_sijainti -= 1
+                self.hihnan_kunto -= 1
+            else:
+                print("Virheellinen komento. Käytä 'e' tai 't'.")
+                continue
+
+            # Näytetään numeromuotoinen kestävyys vuoron päätteeksi
+            print(f"Hihnan kestävyys vuoron päätteeksi: {self.hihnan_kunto}/5")
+
+            # Tarkistetaan katkesiko hihna
+            if self.hihnan_kunto <= 0:
+                print("\nNAPS! Simo puri hihnan poikki ja karkasi omille teilleen!")
+                break
+
+            # Voittoehdot ja tilanteen tarkistus
+            if self.koiran_sijainti == self.puun_sijainti:
+                print(
+                    "\nVoitto! Simo pääsi puun viereen ja nosti jalkaa oikeassa"
+                    " paikassa."
+                )
+                break
+
+            # Jos mennään liian pitkälle ohi
+            if self.koiran_sijainti > self.puun_sijainti + 1:
+                print("\nSimo alkoi vetää vastaan ja hihna narahtaa!")
+                self.koiran_sijainti = self.puun_sijainti  # Palautetaan lähemmäs
+
+            # Jos koira tekee tarpeensa liian aikaisin väärään paikkaan
+            elif self.koiran_sijainti < 0:
+                print(
+                    "\nHups! Simo ei jaksanut odottaa ja kuseksi suoraan omien"
+                    " jalkojensa päälle!"
+                )
+                break
+
+
+if __name__ == "__main__":
+    peli = SimoKusetusPeli()
+    peli.pelaa()
