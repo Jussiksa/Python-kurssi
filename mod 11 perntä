@@ -1,0 +1,89 @@
+# Mod 11 - Perintä - esimerkkejä
+
+# 1. Kantaluokka
+class Elain:
+    elainten_lkm = 0
+
+    def __init__(self, nimi, paino, synt_aika):
+        self.nimi = nimi
+        self.paino = paino
+        self.synt_aika = synt_aika
+        Elain.elainten_lkm += 1
+
+    def liiku(self):
+        print(f"{self.nimi} liikkuu jotenkin johonkin..")
+
+    def aantele(self):
+        print(f"{self.nimi} päästää äänen.")
+
+    def kaikki_tiedot(self):
+        print(f"Nimi: {self.nimi}, paino: {self.paino/1000} kg, syntymäaika: {self.synt_aika}")
+
+
+# 2. Väliluokka (perii Elain-luokan)
+class Peto(Elain):
+    def __init__(self, nimi, paino, synt_aika, on_metsastanyt=False):
+        super().__init__(nimi, paino, synt_aika)
+        self.on_metsastanyt = on_metsastanyt
+
+
+# 3. Aliluokat (perivät Peto-luokan)
+class Ilves(Peto):
+    def kilju(self):
+        print(f"Ilves nimeltä {self.nimi} kiljuu!")
+
+    def kaikki_tiedot(self):
+        print("\nIlves")
+        super().kaikki_tiedot()
+
+
+class Karhu(Peto):
+    def __init__(self, nimi, paino, synt_aika, on_horroksessa=False, on_metsastanyt=False):
+        super().__init__(nimi, paino, synt_aika, on_metsastanyt)
+        self.on_horroksessa = on_horroksessa
+
+    def karju(self):
+        print(f"Karhu nimeltä {self.nimi} karjuu!")
+
+    def liiku(self):
+        print(f"Karhu {self.nimi} möyrii eteenpäin.")
+
+    def kaikki_tiedot(self):
+        print(f"\nKarhu, on talviunilla: {self.on_horroksessa}")
+        super().kaikki_tiedot()
+
+
+# --- Testaus ja suoritus ---
+#eläintarha eläimiä varten (assosisaatio esimerki)
+class Elaintarha:
+    def __init__(self,nimi="nimetön"):
+    self.elaimet = []
+    def lis
+    aa_eläin(self, elain):
+        self.elaimet.append(elain)
+    def listaa_kaikki(self):
+        print(f"Elaintarha {self.nimi}kaikki elaimet")
+        for elain in self.elaimet:
+            elain.kaikki:tiedot()
+            
+tarha,lisaa_elain[ilves1]
+tarha:lisaa_elain[karhu1]
+tarha.listaa
+
+
+
+uusi_elain = Elain("Joku elukka", 1500, 20250921)
+ilves1 = Ilves("Ilveskissa", 6500, 20230621)
+karhu1 = Karhu("Nalle", 155000, 20200814, False)
+
+kaikki_elaimet = [uusi_elain, ilves1, karhu1]
+kaikki_elaimet.append(Karhu("Isonalle", 205000, 20210411, True))
+
+for elain in kaikki_elaimet:
+    elain.kaikki_tiedot()
+
+print(f"\nEläimiä luotu yhteensä: {Elain.elainten_lkm}")
+
+
+
+   
