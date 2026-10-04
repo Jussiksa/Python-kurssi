@@ -1,0 +1,5 @@
+OHJEET:
+- Kirjoita komentoja edetäksesi pelissä.
+- Voit tallentaa pelin milloin tahansa kirjoittamalla 'tallenna'.
+- Lopeta peli kirjoittamalla 'lopeta'.
+========================================
