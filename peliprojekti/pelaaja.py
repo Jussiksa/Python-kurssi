@@ -1,10 +1,10 @@
 from typing import List
-from peli.huone import Huone
-from peli.esine import Esine
+from peliprojekti.huone import Huone
+from peliprojekti.esine import Esine
 
 
 from typing import Optional
-from peli.esine import Esine
+from peliprojekti.esine import Esine
 
 class Pelaaja:
     def __init__(self, nimi: str, aloitushuone: Huone):

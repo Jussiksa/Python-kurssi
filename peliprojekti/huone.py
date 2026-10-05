@@ -1,5 +1,5 @@
 from typing import Optional
-from peli.esine import Esine
+from peliprojekti.esine import Esine
 
 
 class Huone:

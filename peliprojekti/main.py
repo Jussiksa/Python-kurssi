@@ -1,7 +1,6 @@
-from peli.esine import Esine
-from peli.huone import Huone
-from peli.pelaaja import Pelaaja
-
+from esine import Esine
+from huone import Huone
+from pelaaja import Pelaaja
 
 def alusta_peli():
     # Luo esineet
