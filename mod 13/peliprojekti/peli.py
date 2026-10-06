@@ -55,6 +55,23 @@ class SimoKusetusPeli:
         f"Repussa: Herkkuja: {self.herkut} | Kakkapusseja: {self.kakkapussit}"
     )
     self.piirra_kartta()
+    def piirra_kartta(self):
+      """Piirtää visuaalisen esityksen polusta."""
+      # Varmistetaan, että lista on riittävän pitkä koiran sijainnista riippumatta
+      maksimikoko = max(self.puun_sijainti, self.koiran_sijainti) + 2
+      polku = ['_'] * maksimikoko
+
+      # Asetetaan puu ja koti
+      polku[self.puun_sijainti] = '🌳'
+      polku[self.koti_sijainti] = '🏠'
+
+      # Asetetaan Simo
+      if self.koiran_sijainti == self.puun_sijainti:
+        polku[self.koiran_sijainti] = '🐕🌳'
+      else:
+        polku[self.koiran_sijainti] = '🐕'
+
+      print('\nPOLKU: ' + ' - '.join(polku))
 
   def satunnaistapahtuma(self):
     nopanheitto = random.randint(1, 10)
