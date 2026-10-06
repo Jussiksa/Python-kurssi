@@ -1,1 +1,1 @@
-käyttäjä=
+print("Hei, maailma!")

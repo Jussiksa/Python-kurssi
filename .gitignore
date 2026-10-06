@@ -1,0 +1,12 @@
+# Pythonin väliaikaistiedostot
+__pycache__/
+*.pyc
+
+# Virtuaaliympäristö ja editorin asetukset
+.venv/
+.vscode/
+.idea/
+
+# Käyttöjärjestelmän tiedostot
+.DS_Store
+Thumbs.db
