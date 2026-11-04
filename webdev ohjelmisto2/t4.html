@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä 4 - Lajitteluhattu</title>
+</head>
+<body>
+    <h1>Lajitteluhattu</h1>
+    <p id="tulos"></p>
+
+    <script>
+        // Kysytään oppilaan nimeä
+        const nimi = prompt("Syötä oppilaan nimi:");
+        const tulosElementti = document.getElementById("tulos");
+
+        if (nimi) {
+            // Arvotaan kokonaisluku väliltä 1–4
+            const arpa = Math.floor(Math.random() * 4) + 1;
+            let tupa = "";
+
+            // Valitaan tupa arvotun luvun perusteella
+            switch (arpa) {
+                case 1:
+                    tupa = "Rohkelikko";
+                    break;
+                case 2:
+                    tupa = "Luihuinen";
+                    break;
+                case 3:
+                    tupa = "Puuskupuh";
+                    break;
+                case 4:
+                    tupa = "Korpinkynsi";
+                    break;
+            }
+
+            // Tulostetaan tulos HTML-dokumenttiin
+            tulosElementti.textContent = `${nimi}, sinä olet ${tupa}.`;
+        } else {
+            tulosElementti.textContent = "Nimeä ei annettu.";
+        }
+    </script>
+</body>
+</html>

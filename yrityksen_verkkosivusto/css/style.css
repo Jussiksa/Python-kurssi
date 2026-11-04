@@ -1,0 +1,135 @@
+/* Perusasetukset */
+ /* Koko yläosan keskitys ja pystyladonta */
+.top-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  padding-top: 20px;
+}
+
+/* 1. Kapselipalkki napeille */
+.nav-capsule {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px;
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(8px);
+  border-radius: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Yksittäiset napit kapselin sisällä */
+.nav-btns {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  height: 42px;
+  white-space: nowrap;
+  color: #f1f5f9;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 22px;
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+  border: 1.5px solid #38bdf8;
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.35),
+    0 4px 0 #0284c7,
+    0 6px 12px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+/* 2. Logo */
+.logo-container {
+  display: flex;
+  justify-content: center;
+}
+
+.main-logo {
+  max-width: 140px;
+  height: auto;
+  display: block;
+}
+
+/* 3. Pääkuva */
+.hero-image-container {
+  width: 90%;
+  max-width: 900px;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  display: block;
+}
+/* Alaosan korttikontti */
+.hero-cards-container {
+  display: flex;
+  gap: 20px;
+  max-width: 1000px;
+  width: 90%;
+  justify-content: center;
+  z-index: 10;
+}
+
+/* Yksittäinen kortti */
+.ecosystem-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 20px 15px;
+  flex: 1;
+  max-width: 280px;
+  text-align: center;
+  color: #1a1a1a;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  backdrop-filter: blur(5px);
+  position: relative;
+}
+
+.card-icon img {
+  height: 60px;
+  margin-bottom: 12px;
+}
+
+.card-tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #706b63;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.card-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #111111;
+  margin-bottom: 4px;
+}
+
+.card-subtitle {
+  font-size: 0.8rem;
+  color: #555555;
+  font-weight: 500;
+}
+
+/* Mobiiliresponsiivisuus */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 1.6rem;
+  }
+  
+  .hero-brand-name {
+    font-size: 1.3rem;
+  }
+  

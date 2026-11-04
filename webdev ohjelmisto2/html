@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Eka sivu</title>
+</head>
+<body>
+    <header></header>
+    <main>
+        <h1>Tämä on otsikko</h1>
+        <h2>Tämä on alaotsikko</h2>
+        p class="korosta"
+        <p class="korosta">Muista avata aina kehitystyökalut!.</p>
+        <p><a href="esim2.html">Linkki toiselle sivulle.</a></p>
+        <p><a href="https://users.metropolia.fi/~mattpe">Linkki mun kotisivulle.</a></p>
+        <img src="img/lighthouse.png" />
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
+```<ElicitationsGroup>
+</ElicitationsGroup>

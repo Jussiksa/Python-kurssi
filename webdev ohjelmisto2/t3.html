@@ -1,0 +1,31 @@
+!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä 3</title>
+</head>
+<body>
+    <h1>Laskutoimitukset</h1>
+    <div id="tulos"></div>
+
+    <script>
+        // Kysytään kolme lukua ja muunnetaan ne kokonaisluvuiksi (parseInt)
+        const luku1 = parseInt(prompt("Syötä ensimmäinen kokonaisluku:"), 10);
+        const luku2 = parseInt(prompt("Syötä toinen kokonaisluku:"), 10);
+        const luku3 = parseInt(prompt("Syötä kolmas kokonaisluku:"), 10);
+
+        // Lasketaan summa, tulo ja keskiarvo
+        const summa = luku1 + luku2 + luku3;
+        const tulo = luku1 * luku2 * luku3;
+        const keskiarvo = summa / 3;
+
+        // Tulostetaan tulokset HTML-dokumenttiin
+        document.getElementById("tulos").innerHTML = `
+            <p>Annetut luvut: ${luku1}, ${luku2} ja ${luku3}</p>
+            <p><strong>Summa:</strong> ${summa}</p>
+            <p><strong>Tulo:</strong> ${tulo}</p>
+            <p><strong>Keskiarvo:</strong> ${keskiarvo.toFixed(2)}</p>
+        `;
+    </script>
+</body>
+</html>

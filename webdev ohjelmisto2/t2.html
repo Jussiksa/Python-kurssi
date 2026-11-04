@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä 2</title>
+</head>
+<body>
+    <!-- Tähän elementtiin tulostetaan tervehdys -->
+    <h1 id="tervehdys"></h1>
+
+    <script>
+        // Kysytään nimeä prompt-ikkunalla
+        const nimi = prompt("Syötä nimesi:");
+
+        // Tarkistetaan, että käyttäjä syötti jotain, ja tulostetaan sille varattuun h1-elementtiin
+        if (nimi) {
+            document.getElementById("tervehdys").textContent = `Hei, ${nimi}!`;
+        } else {
+            document.getElementById("tervehdys").textContent = "Hei, vieras!";
+        }
+    </script>
+</body>
+</html>
